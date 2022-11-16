@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    android:elevation="16dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="6dp"
+        android:background="#1AFF0000">
+
+        <ImageView
+            android:id="@+id/iv_foto"
+            android:layout_width="75dp"
+            android:layout_height="100dp"
+            android:src="@mipmap/ic_launcher"
+            android:scaleType="centerCrop"
+            android:layout_marginRight="6dp"/>
+
+        <TextView
+            android:id="@+id/tv_nama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nama Pahlawan"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:layout_toRightOf="@id/iv_foto"/>
+
+        <TextView
+            android:id="@+id/tv_tentang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tentang Pahlawan"
+            android:layout_toRightOf="@id/iv_foto"
+            android:layout_below="@id/tv_nama"
+            android:maxLines="4"
+            android:ellipsize="end"
+            android:justificationMode="inter_word"/>
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
