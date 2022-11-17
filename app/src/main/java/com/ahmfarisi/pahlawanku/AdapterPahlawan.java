@@ -1,6 +1,7 @@
 package com.ahmfarisi.pahlawanku;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -23,17 +24,20 @@ public class AdapterPahlawan extends RecyclerView.Adapter<AdapterPahlawan.VHPahl
     @NonNull
     @Override
     public VHPahlawan onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        View VW = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_card, parent, false);
+        return new VHPahlawan(VW);
     }
 
     @Override
     public void onBindViewHolder(@NonNull VHPahlawan holder, int position) {
-
+        ModelPahlawan pahlawan = dataPahlawan.get(position);
+        holder.tvNama.setText(pahlawan.getNama());
+        holder.tvTentang.setText(pahlawan.getTentang());
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return dataPahlawan.size();
     }
 
     public class VHPahlawan extends RecyclerView.ViewHolder {
