@@ -1,5 +1,7 @@
 package com.ahmfarisi.pahlawanku;
 
+import java.util.ArrayList;
+
 public class DataPahlawan {
     public static String[][] data = new String[][] {
             {"Ahmad Dahlan", "Salah seorang ulama dan khatib terkemuka di Masjid Besar Kasultanan Yogyakarta pada masa itu, dan ibu dari K.H. Ahmad Dahlan adalah puteri dari H. Ibrahim yang juga menjabat penghulu Kesultanan Ngayogyakarta Hadiningrat pada masa itu. KH. Ahmad Dahlan telah mempelopori kebangkitan ummat Islam untuk menyadari nasibnya sebagai bangsa terjajah yang masih harus belajar dan berbuat.", "https://upload.wikimedia.org/wikipedia/commons/8/87/Ahmad_Dahlan.jpg"},
@@ -13,4 +15,19 @@ public class DataPahlawan {
             {"Soepomo", "Prof. Mr. Dr. Soepomo (Ejaan Soewandi: Supomo; lahir di Sukoharjo, Jawa Tengah, 22 Januari 1903 – meninggal di Jakarta, 12 September 1958 pada umur 55 tahun) adalah seorang pahlawan nasional Indonesia. Soepomo dikenal sebagai arsitek Undang-undang Dasar 1945, bersama dengan Muhammad Yamin dan Soekarno.", "https://upload.wikimedia.org/wikipedia/commons/c/c3/Supomo_from_President_Website.JPG"},
             {"Tan Malaka", "Tan Malaka atau Ibrahim gelar Datuk Sutan Malaka (lahir di Nagari Pandam Gadang, Suliki, Lima Puluh Kota, Sumatera Barat, 2 Juni 1897 – meninggal di Desa Selopanggung, Kediri, Jawa Timur, 21 Februari 1949 pada umur 51 tahun) adalah seorang pembela kemerdekaan Indonesia, tokoh Partai Komunis Indonesia, juga pendiri Partai Murba, dan merupakan salah satu Pahlawan Nasional Indonesia.", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/TanMalaka_DariPendjara_ed3.jpg/330px-TanMalaka_DariPendjara_ed3.jpg"},
     };
+
+    public static ArrayList<ModelPahlawan> ambilDataPahlawan(){
+        ArrayList<ModelPahlawan> dataPahlawan = new ArrayList<>();
+
+        for(String[] varData: data){
+            ModelPahlawan MP = new ModelPahlawan();
+            MP.setNama(varData[0]);
+            MP.setTentang(varData[1]);
+            MP.setFoto(varData[2]);
+
+            dataPahlawan.add(MP);
+        }
+
+        return dataPahlawan;
+    }
 }
