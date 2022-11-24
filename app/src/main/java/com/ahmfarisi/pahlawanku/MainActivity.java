@@ -1,6 +1,7 @@
 package com.ahmfarisi.pahlawanku;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -29,5 +30,12 @@ public class MainActivity extends AppCompatActivity {
 
         rvPahlawan.setLayoutManager(new LinearLayoutManager(this));
         rvPahlawan.setAdapter(AP);
+    }
+    
+    private void tampilDataGrid(){
+        AdapterGrid AG = new AdapterGrid(data, MainActivity.this);
+
+        rvPahlawan.setLayoutManager(new GridLayoutManager(this, 2));
+        rvPahlawan.setAdapter(AG);
     }
 }
